@@ -1,47 +1,34 @@
 
 ### Game ##
 #
-# EXEC:
-# DEPN:
 #
-# This module is responsible for defining all game variables
-# and methods.
 #
-# ---
-#  ver
-# ---
+#
 ##
 
 from kivy.core.window import Window
-from kivy.config import Config
 
 
-# Game Variables
-#-----#
+## Window & Root Screen
+WINDOW_WIDTH  =  Window.size[0]
+WINDOW_HEIGHT =  Window.size[1]
+print("{} x {}".format(WINDOW_WIDTH, WINDOW_HEIGHT))
+BGD_COLOUR    =  (0, 0, 0, 1)
 
-# Core
-#Window.maximize()
-Config.set("graphics", "width", "800")
-Config.set("graphics", "height", "600")
-SCREEN_SIZE = Window.size
-BGD_COLOUR = (1, 1, 1, 1)
 
-# Ball
-b_wid = round((SCREEN_SIZE[0] * 0.05), 0)
-b_hei = b_wid
-b_x = (SCREEN_SIZE[0] / 2) - (b_wid / 2)
-b_y = (SCREEN_SIZE[1] / 2) - (b_hei / 2)
-BALL_COLOUR = (0, 0, 0, 1)
-BALL_OFFSET = (b_x, b_y)
-BALL_SIZE = (b_wid, b_hei)
-BALL_SPEED = (8, 8)
+## Ball
+BALL_COLOUR   =  (1, 1, 1, 0)
+BALL_WIDTH    =  round((WINDOW_WIDTH * 0.05), 0)
+BALL_HEIGHT   =  BALL_WIDTH
+BALL_X        =  (WINDOW_WIDTH / 2) - (BALL_WIDTH / 2)
+BALL_Y        =  (WINDOW_HEIGHT / 2) - (BALL_HEIGHT / 2)
+BALL_SPEED    =  (8, 8)
 
-# Paddle
-p_wid = round((SCREEN_SIZE[0] * 0.05), 0)
-p_hei = round((SCREEN_SIZE[1] * 0.27), 0)
-p_x = round((SCREEN_SIZE[0] * 0.05), 0)
-p_y = (SCREEN_SIZE[1] / 2) - (p_hei / 2)
-PADDLE_COLOUR = (1, 1, 1, 1)
-PADDLE_OFFSET = (p_x, p_y)
-PADDLE_SIZE = (p_wid, p_hei)
-PADDLE_SPEED = (0, 6)
+
+## Paddle
+PADDLE_COLOUR =  (1, 1, 1, 0)
+PADDLE_WIDTH  =  round((WINDOW_WIDTH * 0.05), 0)
+PADDLE_HEIGHT =  round((WINDOW_HEIGHT * 0.27), 0)
+PADDLE_X 	  =  round((WINDOW_WIDTH * 0.05), 0)
+PADDLE_Y 	  =  (WINDOW_HEIGHT / 2) - (PADDLE_HEIGHT / 2)
+PADDLE_SPEED  =  (0, 6)
