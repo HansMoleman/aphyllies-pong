@@ -14,20 +14,30 @@
 
 from kivy.app import App
 from kivy.uix.label import Label
-import kivy
-
 from vector2D import Vector2D as V2D
+from frame import Frame
+import game
+from paddle import Paddle
 
 
-
-kivy.require(kivy.__version__)
-
-class TestApp(App):
+class Pong(App):
 	
 	def build(self):
-		vect = V2D((300, 400))
-		message = "x: {}, y: {}".format(vect.x, vect.y)
-		return Label(text=message)
+
+		frame = Frame(pos=(0, 0), size=game.SCREEN_SIZE)
+
+		right_paddle_x = game.SCREEN_SIZE[0] - game.PADDLE_OFFSET[0] - game.PADDLE_SIZE[0]
+		right_paddle_y = game.PADDLE_OFFSET[1]
+		paddle_r = Paddle(pos=(right_paddle_x, right_paddle_y))
+
+		left_paddle_x = game.PADDLE_OFFSET[0]
+		left_paddle_y = game.PADDLE_OFFSET[1]
+		paddle_l = Paddle(pos=(left_paddle_x, left_paddle_y))
+
+		frame.addWidget(paddle_r)
+		frame.addWidget(paddle_l)
+
+		return frame
 
 
-TestApp().run()
+Pong().run()
