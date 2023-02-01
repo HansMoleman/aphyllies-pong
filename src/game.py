@@ -10,9 +10,8 @@ from kivy.core.window import Window
 
 
 ## Window & Root Screen
-WINDOW_WIDTH  =  Window.size[0]
-WINDOW_HEIGHT =  Window.size[1]
-print("{} x {}".format(WINDOW_WIDTH, WINDOW_HEIGHT))
+WINDOW_WIDTH  =  800
+WINDOW_HEIGHT =  600
 BGD_COLOUR    =  (0, 0, 0, 1)
 
 
@@ -22,7 +21,7 @@ BALL_WIDTH    =  round((WINDOW_WIDTH * 0.05), 0)
 BALL_HEIGHT   =  BALL_WIDTH
 BALL_X        =  (WINDOW_WIDTH / 2) - (BALL_WIDTH / 2)
 BALL_Y        =  (WINDOW_HEIGHT / 2) - (BALL_HEIGHT / 2)
-BALL_SPEED    =  (8, 8)
+BALL_SPEED    =  (9, 9)
 
 
 ## Paddle
